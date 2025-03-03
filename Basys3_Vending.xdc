@@ -43,13 +43,26 @@ set_property IOSTANDARD LVCMOS33 [get_ports {btnC}]
 ## 5 On-board LEDs
 # Use any two of the 16 LEDs for 'led_purchase' and 'led_insuff'
 # Example: LED0 at U16, LED1 at E19
-set_property PACKAGE_PIN U16 [get_ports {led_purchase}]
-set_property IOSTANDARD LVCMOS33 [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN U16 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN E19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN U19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN V19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN W18 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN U15 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN U14 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN V14 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN V13 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN V3 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN W3 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN U3 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN P3 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN N3 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN P1 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
+set_property -dict { PACKAGE_PIN L1 IOSTANDARD LVCMOS33 } [get_ports {led_purchase}]
 
 
 #Insuffiencient LEDs lgiht u
-set_property PACKAGE_PIN E19 [get_ports {led_insuff}]
-set_property IOSTANDARD LVCMOS33 [get_ports {led_insuff}]
+set_property -dict { PACKAGE_PIN E19 IOSTANDARD LVCMOS33 } [get_ports {led_insuff}]
 
 ## 6) Seven-Segment Display (4 digits, common anode)
 # segments: seg[7:0] => {CA,CB,CC,CD,CE,CF,CG,DP}
