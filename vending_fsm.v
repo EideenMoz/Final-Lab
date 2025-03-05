@@ -105,13 +105,13 @@ module vending_fsm(
                     led_insuff   <= 1'b0;
                     
                     // If a coin is pressed or confirm in select
-                    if (db_btnU) 
+                    if (db_btnU)                    // INSERT 50 cents
                         coin_sum <= 12'd50;
-                    else if (db_btnL)
+                    else if (db_btnL)               // INSERT 25 cents
                         coin_sum <= 12'd25;
-                    else if (db_btnR)
+                    else if (db_btnR)               // INSERT 10 cents
                         coin_sum <= 12'd10;
-                    else if (db_btnC) begin
+                    else if (db_btnC) begin         // CONFIRM
                         if (coin_sum >= price)
                             change <= coin_sum - price;
                         else

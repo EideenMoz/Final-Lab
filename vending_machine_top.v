@@ -19,7 +19,7 @@ module vending_machine_top(
     output wire [3:0] an,   // four digit anodes
     
     // LED indicators
-    output wire led_purchase, // LED for successful vend
+    output wire [15:0] led_purchase, // LEDs for successful vend (now 16-bit)
     output wire led_insuff    // LED for insufficient funds
 );
     // ----------------------------------------------------------
@@ -83,7 +83,19 @@ module vending_machine_top(
     );
     
     // Drive top-level LED outputs from FSM signals
-    assign led_purchase = fsm_purchase;
+    // Update led_purchase to use all 16 bits
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            led_purchase <= 16'h0000;
+        end
+        else if (fsm_purchase) begin
+            led_purchase <= 16'hFFFF; // All LEDs on when purchase is successful
+        end
+        else begin
+            led_purchase <= 16'h0000; // All LEDs off
+        end
+    end
+
     assign led_insuff   = fsm_insuff;
     
     // ----------------------------------------------------------
