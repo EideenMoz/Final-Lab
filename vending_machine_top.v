@@ -19,7 +19,7 @@ module vending_machine_top(
     output wire [3:0] an,   // four digit anodes
     
     // LED indicators
-    output wire [15:0] led_purchase, // LEDs for successful vend (now 16-bit)
+    output reg [15:0] led_purchase, // LEDs for successful vend (now 16-bit)
     output wire led_insuff    // LED for insufficient funds
 );
     // ----------------------------------------------------------

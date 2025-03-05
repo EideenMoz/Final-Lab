@@ -18,7 +18,7 @@ module vending_machine_tb;
     // Outputs from DUT
     wire [7:0] seg;
     wire [3:0] an;
-    wire led_purchase;
+    wire [15:0] led_purchase;
     wire led_insuff;
     
     // --------------------------------------------------------------------

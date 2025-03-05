@@ -44,7 +44,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports {btnC}]
 # Use any two of the 16 LEDs for 'led_purchase' and 'led_insuff'
 # Example: LED0 at U16, LED1 at E19
 set_property -dict { PACKAGE_PIN U16 IOSTANDARD LVCMOS33 } [get_ports {led_purchase[0]}]
-set_property -dict { PACKAGE_PIN E19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase[1]}]
+# set_property -dict { PACKAGE_PIN E19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase[1]}]
 set_property -dict { PACKAGE_PIN U19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase[2]}]
 set_property -dict { PACKAGE_PIN V19 IOSTANDARD LVCMOS33 } [get_ports {led_purchase[3]}]
 set_property -dict { PACKAGE_PIN W18 IOSTANDARD LVCMOS33 } [get_ports {led_purchase[4]}]
